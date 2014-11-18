@@ -1,3 +1,5 @@
-# reveal.js [![Build Status](https://travis-ci.org/hakimel/reveal.js.svg?branch=master)](https://travis-ci.org/hakimel/reveal.js)
+# Simplest Todos
 
-A framework for easily creating beautiful presentations using HTML. [Check out the live demo](http://lab.hakim.se/reveal-js/).
+An app for the LaunchPad Lab Demo Day. [Check out the live demo](http://simplest-todos.meteor.com).
+
+![A little inspiration](http://f.cl.ly/items/0J3X2k0i0u3b0F2T3W33/inspiration.jpg "A little inspiration")
