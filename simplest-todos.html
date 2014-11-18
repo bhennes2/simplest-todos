@@ -1,0 +1,36 @@
+<!-- simple-todos.html -->
+<head>
+  <title>A List </title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>A List ({{incompleteCount}})</h1>
+      <label class="hide-completed">
+        <input type="checkbox" checked="{{hideCompleted}}" />
+        Hide Completed Tasks
+      </label>
+      <form class="new-task">
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+      </form>
+    </header>
+
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<!-- replace the existing task template with this code -->
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+    <label>
+      <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+      <span class="text">{{text}}</span>
+    </label>
+  </li>
+</template>
