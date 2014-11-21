@@ -9,12 +9,10 @@ Template.listNew.events({
       createdAt: new Date(),
       updatedAt: new Date()
     }, function(error, id){
-      Router.go('/lists/:_id', {_id: id});
+      Router.go('listPage', {_id: id});
     });
 
     event.target.text.value = "";
   }
 
 });
-
-
