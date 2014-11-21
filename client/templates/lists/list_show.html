@@ -1,11 +1,13 @@
 <template name="listShow">
   <div class="back">
     <header>
-      <h1>{{text}} ({{incompleteCount}})</h1>
-      <label class="hide-completed" data-checked="false">
+      <h1 class="list-heading">{{text}}
+        <span>({{incompleteCount}})</span>
+      </h1>
+      <!-- <label class="hide-completed" data-checked="false">
         <div class="background-checkbox {{#if hideCompleted}}checked{{/if}}"></div>
         Hide Completed Tasks
-      </label>
+      </label> -->
       <form class="new-task">
         <input type="hidden" name="listId" value="{{ _id }}" />
         <input type="text" name="text" placeholder="Type to add new tasks" autocomplete="off" />
@@ -20,9 +22,9 @@
 </template>
 
 <template name="task">
-  <li class="{{#if checked}}checked{{/if}}">
+  <li class="toggle-checked {{#if checked}}checked{{/if}}">
     <button class="delete">&times;</button>
-    <label class="toggle-checked">
+    <label>
       <div class="background-checkbox"></div>
       <span class="text">{{text}}</span>
     </label>

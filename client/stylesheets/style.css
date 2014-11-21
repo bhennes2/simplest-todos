@@ -41,7 +41,6 @@ h1 {
   margin: 0;
   margin-bottom: 10px;
   display: inline-block;
-  margin-right: 1em;
 }
 
 form {
@@ -115,9 +114,6 @@ header .hide-completed {
 }
 
 @media (max-width: 600px) {
-  li {
-    padding: 12px 15px;
-  }
 
   .search {
     width: 150px;
@@ -182,4 +178,12 @@ header .hide-completed {
 
 .checked .background-checkbox, .background-checkbox.checked {
   background-color: #de4f4f;
+}
+
+.list-heading {
+  display: block;
+}
+
+.list-heading span {
+  float: right;
 }
