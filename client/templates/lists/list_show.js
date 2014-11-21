@@ -13,16 +13,22 @@ Template.listShow.events({
     });
 
     event.target.text.value = "";
+  },
+  "click .hide-completed": function (event) {
+    event.preventDefault();
+    var $el = $(event.target),
+        checked = $el.data('checked');
+    Session.set("hideCompleted", !checked);
+    $el.data('checked', !checked);
   }
-
 });
 
 Template.listShow.helpers({
   tasks: function () {
     if (Session.get("hideCompleted")) {
-      return Tasks.find({checked: {$ne: true}, listId: this._id}, {sort: {createdAt: -1}});
+      return Tasks.find({checked: {$ne: true}, listId: this._id}, {sort: { checked: 1, createdAt: -1 }});
     } else {
-      return Tasks.find({listId: this._id}, {sort: {createdAt: -1}});
+      return Tasks.find({listId: this._id}, {sort: { checked: 1, createdAt: -1  }});
     }
   },
   hideCompleted: function () {
@@ -30,9 +36,6 @@ Template.listShow.helpers({
   },
   incompleteCount: function () {
     return Tasks.find({checked: {$ne: true}, listId: this._id}).count();
-  },
-  "change .hide-completed input": function (event) {
-    Session.set("hideCompleted", event.target.checked);
   }
 });
 

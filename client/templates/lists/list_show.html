@@ -1,27 +1,29 @@
 <template name="listShow">
-  <header>
-    <h1>{{text}} ({{incompleteCount}})</h1>
-    <label class="hide-completed">
-      <input type="checkbox" checked="{{hideCompleted}}" />
-      Hide Completed Tasks
-    </label>
-    <form class="new-task">
-      <input type="hidden" name="listId" value="{{ _id }}" />
-      <input type="text" name="text" placeholder="Type to add new tasks" />
-    </form>
-  </header>
-  <ul>
-    {{#each tasks}}
-      {{> task}}
-    {{/each}}
-  </ul>
+  <div class="back">
+    <header>
+      <h1>{{text}} ({{incompleteCount}})</h1>
+      <label class="hide-completed" data-checked="false">
+        <div class="background-checkbox {{#if hideCompleted}}checked{{/if}}"></div>
+        Hide Completed Tasks
+      </label>
+      <form class="new-task">
+        <input type="hidden" name="listId" value="{{ _id }}" />
+        <input type="text" name="text" placeholder="Type to add new tasks" autocomplete="off" />
+      </form>
+    </header>
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
 </template>
 
 <template name="task">
   <li class="{{#if checked}}checked{{/if}}">
     <button class="delete">&times;</button>
-    <label>
-      <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+    <label class="toggle-checked">
+      <div class="background-checkbox"></div>
       <span class="text">{{text}}</span>
     </label>
   </li>

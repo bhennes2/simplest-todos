@@ -1,8 +1,6 @@
 body {
   font-family: sans-serif;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
-  background-attachment: fixed;
+  background-color: #27272b;
 
   position: absolute;
   top: 0;
@@ -19,15 +17,19 @@ body {
 .container {
   max-width: 600px;
   margin: 0 auto;
-  min-height: 100%;
-  background: white;
+  min-height: 97%;
+  border-top: 5px solid #de4f4f;
+  border-bottom: 5px solid #de4f4f;
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  color: white;
   padding: 20px 15px 15px 15px;
   position: relative;
+}
+
+.home-page {
+  margin-top: 100px;
 }
 
 #login-buttons {
@@ -43,7 +45,7 @@ h1 {
 }
 
 form {
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: -10px;
   position: relative;
 }
@@ -56,6 +58,7 @@ form {
   width: 100%;
   padding-right: 80px;
   font-size: 1em;
+  color: white;
 }
 
 input:focus{
@@ -63,9 +66,9 @@ input:focus{
 }
 
 ul {
-  margin: 0;
+  margin: 20px 0 0 0;
   padding: 0;
-  background: white;
+  color: white;
 }
 
 .delete {
@@ -75,13 +78,15 @@ ul {
   font-size: 1em;
   border: none;
   position: relative;
+  color: white;
 }
 
 li {
   position: relative;
   list-style: none;
-  padding: 15px;
-  border-bottom: #eee solid 1px;
+  padding: 15px 0;
+  margin: 0 15px;
+  border-bottom: #777 dashed 1px;
 }
 
 li .text {
@@ -122,4 +127,59 @@ header .hide-completed {
   .new-task input {
     padding-bottom: 5px;
   }
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000;
+}
+  /* flip the pane when hovered */
+  .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  left: 0;
+  right: 0;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}
+
+.background-checkbox {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color:white;
+  border: 1px solid black
+}
+
+.checked .background-checkbox, .background-checkbox.checked {
+  background-color: #de4f4f;
 }

@@ -6,8 +6,10 @@
 
 <template name="layout">
   <div class="container">
-    <div id="main" class="row-fluid">
-      {{> yield}}
+    <div id="main" class="row-fluid flip-container">
+      <div class="flipper">
+        {{> yield}}
+      </div>
     </div>
   </div>
 </template>
