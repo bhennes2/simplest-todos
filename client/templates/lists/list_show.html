@@ -4,10 +4,11 @@
       <h1 class="list-heading">{{text}}
         <span>({{incompleteCount}})</span>
       </h1>
-      <!-- <label class="hide-completed" data-checked="false">
+      <label class="hide-completed" data-checked="false">
         <div class="background-checkbox {{#if hideCompleted}}checked{{/if}}"></div>
-        Hide Completed Tasks
-      </label> -->
+        Hide Completed
+      </label>
+      <br class="clear" />
       <form class="new-task">
         <input type="hidden" name="listId" value="{{ _id }}" />
         <input type="text" name="text" placeholder="Type to add new tasks" autocomplete="off" />

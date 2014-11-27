@@ -24,6 +24,7 @@ Template.listShow.events({
 });
 
 Template.listShow.helpers({
+
   tasks: function () {
     if (Session.get("hideCompleted")) {
       return Tasks.find({checked: {$ne: true}, listId: this._id}, {sort: { checked: 1, createdAt: -1 }});
@@ -48,3 +49,7 @@ Template.task.events({
     Tasks.remove(this._id);
   }
 });
+
+Template.listShow.rendered = function(){
+  Session.set("hideCompleted", true);
+};

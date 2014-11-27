@@ -15,8 +15,7 @@ body {
 }
 
 .container {
-  max-width: 600px;
-  margin: 0 auto;
+  width: 100%;
   min-height: 97%;
   border-top: 5px solid #de4f4f;
   border-bottom: 5px solid #de4f4f;
@@ -113,18 +112,6 @@ header .hide-completed {
   margin-left: 5px;
 }
 
-@media (max-width: 600px) {
-
-  .search {
-    width: 150px;
-    clear: both;
-  }
-
-  .new-task input {
-    padding-bottom: 5px;
-  }
-}
-
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000;
@@ -181,9 +168,5 @@ header .hide-completed {
 }
 
 .list-heading {
-  display: block;
-}
-
-.list-heading span {
-  float: right;
+  float: left;
 }
